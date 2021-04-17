@@ -1,0 +1,15 @@
+cargo-features = ["strip"]
+
+[workspace]
+members = [
+  "cli",
+  "core",
+  "server",
+]
+
+[profile.release]
+lto = true
+codegen-units = 1
+incremental = false
+# opt-level = "z"
+strip = "symbols"
